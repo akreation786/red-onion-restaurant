@@ -1,26 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { createContext, useState } from 'react';
+// import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header/Header';
+import Menu from './components/Menu/Menu';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import MenuDetail from './components/MenuDetail/MenuDetail';
+import NotFound from './components/NotFound/NotFound';
+
+
+export const CategoryContext = createContext();
+
+
+
 
 function App() {
+const [foodOrderCount, setFoodOrderCount] = useState(0);
+const [foodCategory, setFoodCategory] = useState("lunch");
+const [cart, setCart] = useState([]);
+
+
+const handleAddFoodCard = (menuCard) => {
+  console.log("add food card clicked", menuCard);
+  const newCart = [...cart, menuCard];
+  setCart(newCart);
+}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <button className="btn btn-success">button</button>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CategoryContext.Provider value={[foodOrderCount, setFoodOrderCount]}>
+      <Header></Header>
+      <Router>
+        <Switch>
+          <Route path="/menu">
+            <Menu foodCategory={foodCategory} setFoodCategory={setFoodCategory}></Menu>
+          </Route>
+          <Route exact path="/">
+            <Menu></Menu>
+          </Route>
+          <Route path="/menuCard/:menuCardKey">
+            <MenuDetail handleAddFoodCard={handleAddFoodCard}></MenuDetail>
+          </Route>
+          <Route path="*">
+            <NotFound></NotFound>
+          </Route>
+        </Switch>
+      </Router>
+    </CategoryContext.Provider>
   );
 }
 

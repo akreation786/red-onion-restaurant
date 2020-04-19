@@ -1,0 +1,26 @@
+.logo img{
+   width: 175px;
+   padding: 30px 0px;
+}
+.login_form a{
+   color: #020202;
+   font-weight: 700;
+   padding: 0px 28px;
+}
+.login_form a:hover{
+   text-decoration: none;
+   color: #f91944;
+}
+a.login{
+   line-height: 110px;
+}
+.login_form a.btnSignUp{
+   background: #f91944;
+   padding: 15px 30px;
+   border-radius: 30px;
+   color: #fff;
+   font-weight: 600;
+}
+.login_form a.btnSignUp:hover{
+   color: #ddd;
+}

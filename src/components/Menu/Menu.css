@@ -1,0 +1,17 @@
+img{
+   width: 100%;
+}
+.nav-item .nav-link .active{
+   color: #cc0000;
+}
+.main_button{
+   background: #bbb;
+   color: #fff;
+   padding: 15px 75px;
+   border: none;
+   border-radius: 10px;
+   font-size: 18px;
+   font-weight: 600;
+   margin: 0px auto;
+   margin-top: 60px;
+}

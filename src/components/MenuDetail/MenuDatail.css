@@ -1,0 +1,61 @@
+.menuDetailContent h2{
+   font-size: 40px;
+   text-transform: capitalize;
+   margin-bottom: 30px;
+}
+.menuDetailContent p{
+   font-size: 16px;
+   line-height: 28px;
+}
+
+.addToCardBtn {
+   background: #f91944;
+   padding: 10px 22px;
+   border-radius: 30px;
+   color: #fff;
+   font-weight: 500;
+   display: inline-block;
+   font-size: 14px;
+   margin-top: 25px;
+   border: none;
+   font-size: inherit;
+}
+.decrementBtn, .incrementBtn{
+   border: none;
+   background: none;
+   font-size: inherit;
+}
+.addToCardBtn svg{
+   margin-right: 12px;
+}
+
+.addToCardBtn:hover{
+   color: #020202;
+   text-decoration: none;
+}
+.addFoodcount{
+   display: flex;
+}
+.addFoodcount h4{
+   margin-right: 15px;
+   line-height: 46px;
+   font-size: 20px;
+   font-weight: 500;
+   margin-bottom: 0px;
+}
+.foodCount{
+   border: 1px solid #ddd;
+   padding: 10px 30px;
+   border-radius: 30px;
+}
+.foodCount span{
+   margin: 0px 12px;
+}
+.foodCount svg{
+   font-size: 14px;
+    color: #020202;
+}
+.foodCount svg:hover{
+   font-size: 14px;
+    color: #f91944;
+}
